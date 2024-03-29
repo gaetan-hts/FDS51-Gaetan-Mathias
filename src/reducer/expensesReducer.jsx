@@ -1,4 +1,10 @@
-const ExpensesReducer = (state, action) => {
+import { useReducer } from "react";
+
+const initialState = {
+  expenses: [],
+};
+
+const expensesReducer = (state, action) => {
   switch (action.type) {
     case "ADD_EXPENSE":
       return {
@@ -11,4 +17,6 @@ const ExpensesReducer = (state, action) => {
   }
 };
 
-export default ExpensesReducer;
+const useExpensesReducer = () => useReducer(expensesReducer, initialState);
+
+export default useExpensesReducer;
