@@ -38,6 +38,11 @@ $total: rgb(202, 142, 30);
 body {
   @include centerChild();
   text-align: center;
+
+  #root {
+    width: 60%;
+    min-width: 400px;
+  }
 }
 
 h1 {
