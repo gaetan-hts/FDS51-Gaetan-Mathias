@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/index.scss";
 import ExpensesList from "./components/ExpensesList";
 import AddExpensesForm from "./components/AddExpensesForm";
 

@@ -25,29 +25,28 @@ const AddExpensesForm = ({ category }) => {
   };
 
   return (
-    <div className="add-expenses">
+    <div className="add-expenses-container">
       <h2>Ajouter une dépense</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Titre :</label>
           <input
             required
+            placeholder="Titre de la dépense"
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div>
-          <label>Montant :</label>
           <input
             required
+            placeholder="Montant de la dépense"
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <div>
-          <label>Catégorie :</label>
+        <div className="select-btn-container">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -60,8 +59,8 @@ const AddExpensesForm = ({ category }) => {
               </option>
             ))}
           </select>
+          <button type="submit">Ajouter</button>
         </div>
-        <button type="submit">Ajouter</button>
       </form>
     </div>
   );

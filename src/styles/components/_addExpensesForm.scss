@@ -1,0 +1,32 @@
+.add-expenses-container {
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid rgba(241, 241, 241, 0.137);
+  padding: 15px;
+
+  form {
+    input {
+      @include input();
+    }
+
+    .select-btn-container {
+    }
+    select {
+      margin: 25px;
+      height: 30px;
+    }
+    button {
+      height: 30px;
+      width: 120px;
+      font-weight: 600;
+      border: 2px solid $total;
+      color: $total;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}

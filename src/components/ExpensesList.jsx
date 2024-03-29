@@ -9,7 +9,7 @@ const ExpensesList = ({ category }) => {
   } = useExpensesContext();
   const [filterSelectedCategory, setFilterSelectedCategory] = useState("");
   const [filteredExpenses, setFilteredExpenses] = useState([]);
-  const [total, setTotal] = useState(null);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     if (filterSelectedCategory !== "") {
@@ -28,15 +28,17 @@ const ExpensesList = ({ category }) => {
       0
     );
     setTotal(totalAmount.toFixed(2));
-  }, [total, filterSelectedCategory, expenses]);
+  }, [total, filterSelectedCategory, filteredExpenses]);
 
   return (
     <>
       <div className="expenses-list-container">
         <header>
-          <h3>Titre</h3>
-          <h3>Category</h3>
-          <h3>Montant</h3>
+          <div className="title-container">
+            <h3>Titre</h3>
+            <h3>Categorie</h3>
+            <h3>Montant</h3>
+          </div>
           <select
             value={filterSelectedCategory}
             onChange={(e) => setFilterSelectedCategory(e.target.value)}
@@ -49,7 +51,7 @@ const ExpensesList = ({ category }) => {
             ))}
           </select>
         </header>
-        <ul>
+        <ul className="item-list">
           {filteredExpenses.map((expense, index) => (
             <Expense
               key={index}
@@ -62,12 +64,13 @@ const ExpensesList = ({ category }) => {
       </div>
       <div className="total-container">
         <h2>
-          Total des dépenses (
+          Total (
           {filterSelectedCategory
             ? filterSelectedCategory
             : "Toutes catégories"}
-          ) : {total} €
+          ) :
         </h2>
+        <p className="total">{total} €</p>
       </div>
     </>
   );
