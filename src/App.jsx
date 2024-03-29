@@ -1,6 +1,6 @@
 import "./App.css";
 import ExpensesList from "./components/ExpensesList";
-import AddExpencesForm from "./components/AddExpensesForm";
+import AddExpensesForm from "./components/AddExpensesForm";
 
 function App() {
   const category = [
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <h1>Liste des dépenses</h1>
-      <AddExpencesForm category={category} />
+      <AddExpensesForm category={category} />
       <ExpensesList category={category} />
     </>
   );

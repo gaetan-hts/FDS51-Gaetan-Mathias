@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const AddExpenses = ({ dispatch, category }) => {
+const AddExpensesForm = ({ dispatch, category }) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -11,7 +11,7 @@ const AddExpenses = ({ dispatch, category }) => {
 
     dispatch({
       type: "ADD_EXPENSE",
-      payload: { title, amount, selectedCategory },
+      payload: { title, amount, category: selectedCategory },
     });
     setTitle("");
     setAmount("");
@@ -61,4 +61,4 @@ const AddExpenses = ({ dispatch, category }) => {
   );
 };
 
-export default AddExpenses;
+export default AddExpensesForm;

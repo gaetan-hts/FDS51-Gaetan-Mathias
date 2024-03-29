@@ -6,7 +6,7 @@ const expensesContext = createContext();
 
 export const useExpensesContext = () => useContext(expensesContext);
 
-const TodoContextProvider = ({ children }) => {
+const ExpensesContextProvider = ({ children }) => {
   const [state, dispatch] = expensesReducer();
 
   return (
@@ -16,4 +16,4 @@ const TodoContextProvider = ({ children }) => {
   );
 };
 
-export default TodoContextProvider;
+export default ExpensesContextProvider;
