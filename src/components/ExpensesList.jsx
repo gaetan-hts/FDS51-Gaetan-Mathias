@@ -32,6 +32,19 @@ const ExpensesList = ({ category }) => {
 
   return (
     <>
+      <div className="select-container">
+        <select
+          value={filterSelectedCategory}
+          onChange={(e) => setFilterSelectedCategory(e.target.value)}
+        >
+          <option value="">Tout</option>
+          {category.map((cat, index) => (
+            <option key={index} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="expenses-list-container">
         <header>
           <div className="title-container">
@@ -39,17 +52,6 @@ const ExpensesList = ({ category }) => {
             <h3>Categorie</h3>
             <h3>Montant</h3>
           </div>
-          <select
-            value={filterSelectedCategory}
-            onChange={(e) => setFilterSelectedCategory(e.target.value)}
-          >
-            <option value="">Tout</option>
-            {category.map((cat, index) => (
-              <option key={index} value={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
         </header>
         <ul className="item-list">
           {filteredExpenses.map((expense, index) => (
