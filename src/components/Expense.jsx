@@ -7,7 +7,6 @@ const Expense = ({ title, category, amount }) => {
         <p>{category}</p>
         <p>{amount.toFixed(2)} €</p>
       </li>
-      <div className="separator"></div>
     </>
   );
 };

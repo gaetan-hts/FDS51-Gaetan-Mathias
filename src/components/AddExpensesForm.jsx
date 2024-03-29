@@ -35,6 +35,7 @@ const AddExpensesForm = ({ category }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            maxLength={20}
           />
         </div>
         <div>

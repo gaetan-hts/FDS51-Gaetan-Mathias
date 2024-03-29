@@ -1,12 +1,22 @@
 .select-container {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 40px 0 20px 0;
+
   select {
+    height: 30px;
     margin-left: 20px;
     border: 2px solid $total;
+
+    &::before {
+      content: "Filtrer :";
+      position: absolute;
+      left: -50px;
+      bottom: 0;
+    }
   }
 }
 
