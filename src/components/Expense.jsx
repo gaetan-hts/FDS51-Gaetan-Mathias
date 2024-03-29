@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Expence = ({ title, category, amount }) => {
+const Expense = ({ title, category, amount }) => {
   return (
     <li>
       <p>{title}</p>
@@ -9,4 +9,4 @@ const Expence = ({ title, category, amount }) => {
   );
 };
 
-export default Expence;
+export default Expense;

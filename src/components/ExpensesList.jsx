@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import Expence from "./Expence";
+import Expense from "./Expense";
 
-const ExpencesList = ({ category }) => {
+const ExpensesList = ({ category }) => {
   const [filterSelectedCategory, setFilterSelectedCategory] = useState("");
-  const [filteredExpences, setFilteredExpences] = useState([]);
+  const [filteredExpenses, setFilteredExpenses] = useState([]);
 
-  const expences = [
+  const expenses = [
     {
       title: "Train",
       amount: 30,
@@ -23,12 +23,12 @@ const ExpencesList = ({ category }) => {
 
   useEffect(() => {
     if (filterSelectedCategory !== "") {
-      const filteredExpences = expences.filter(
-        (expence) => expence.category === filterSelectedCategory
+      const filteredExpenses = expenses.filter(
+        (expense) => expense.category === filterSelectedCategory
       );
-      setFilteredExpences(filteredExpences);
+      setFilteredExpenses(filteredExpenses);
     } else {
-      setFilteredExpences(expences);
+      setFilteredExpenses(expenses);
     }
   }, [filterSelectedCategory]);
 
@@ -52,12 +52,12 @@ const ExpencesList = ({ category }) => {
         </select>
       </header>
       <ul>
-        {filteredExpences.map((expence, index) => (
-          <Expence
+        {filteredExpenses.map((expense, index) => (
+          <Expense
             key={index}
-            title={expence.title}
-            category={expence.category}
-            amount={expence.amount}
+            title={expense.title}
+            category={expense.category}
+            amount={expense.amount}
           />
         ))}
       </ul>
@@ -65,4 +65,4 @@ const ExpencesList = ({ category }) => {
   );
 };
 
-export default ExpencesList;
+export default ExpensesList;
